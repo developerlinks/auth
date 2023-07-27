@@ -1,0 +1,28 @@
+import { Material } from './user';
+
+export interface GetMyMaterial {
+  materials: Material[];
+  total: number;
+}
+
+export interface AddMaterialParmas {
+  name: string;
+  npmName: string;
+  version: string;
+  isPrivate: boolean;
+  tags: string[];
+  groups: string[];
+  installCommand?: string;
+  startCommand?: string;
+  ignore?: string;
+}
+
+export interface CreateCommentDto {
+  content: string;
+
+  emoticon?: string;
+
+  materialId: string | null;
+
+  parentId?: string;
+}
