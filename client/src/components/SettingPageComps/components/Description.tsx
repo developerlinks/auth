@@ -1,4 +1,4 @@
-import EditorCard from '@/materials/EditorCard';
+import EditorCard from '@/components/EditorCard';
 import { settingConfig } from '../config';
 import { useEffect, useState } from 'react';
 import useUserStore from '@/store/user';

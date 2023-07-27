@@ -1,4 +1,4 @@
-import EditorCard from '@/materials/EditorCard';
+import EditorCard from '@/components/EditorCard';
 import { settingConfig } from '../../config';
 import useUserStore from '@/store/user';
 import { updateUserInfo } from '@/api/user';

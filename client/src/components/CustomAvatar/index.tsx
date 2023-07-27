@@ -58,7 +58,7 @@ function CustomAvatar({
         ...style,
       }}
       {...rest}
-      onClick={clickHandle || userAvatarClick}
+      onClick={clickHandle}
     >
       {username.split('')[0]}
     </AvatarSemi>

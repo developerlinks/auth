@@ -10,10 +10,8 @@ import {
   DropdownDivider,
   Spin,
 } from '@douyinfe/semi-ui';
-import { IconBell, IconHelpCircle } from '@douyinfe/semi-icons';
 import useStore from '@/store/common/global';
 import useUserStore from '@/store/user';
-import { User } from '@/types/user';
 import { useRouter } from 'next/router';
 import CustomAvatar from '@/components/CustomAvatar';
 import { getDeviceId } from '@/utils/device';
@@ -58,6 +56,9 @@ const Index: FC = () => {
         position='bottomLeft'
         render={
           <Dropdown.Menu>
+            <Dropdown.Item onClick={() => push(`/user/${user?.id}`)}>
+              个人主页
+            </Dropdown.Item>
             <Dropdown.Item onClick={() => push('/user/setting')}>
               个人设置
             </Dropdown.Item>

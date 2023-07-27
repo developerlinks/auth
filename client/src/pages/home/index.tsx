@@ -5,12 +5,12 @@ import { useRouter } from 'next/router';
 
 export default function Home() {
   const { push } = useRouter();
-  const sloganSourceString = '物料平台';
-  const sloganSearchWords = ['物料'];
+  const sloganSourceString = '用户系统';
+  const sloganSearchWords = ['用户'];
 
-  const descriptionSourceString = '生产力和创意的聚集处';
+  const descriptionSourceString = '用户系统启动模版';
 
-  const descriptionSearchWords = ['生产力', '创意'];
+  const descriptionSearchWords = ['用户', '模版'];
   return (
     <main className={styles.welcome}>
       <div className={styles.banner}>

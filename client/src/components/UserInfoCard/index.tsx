@@ -20,14 +20,12 @@ const UserInfoCard = (user: User) => {
     username,
     profile: { avatar, description },
     createdAt,
-    materials,
   } = user;
 
   const { user: userSelf } = useUserStore();
 
   const followerKey = `/follow/${id}/followers`;
   const followingKey = `/follow/${id}/following`;
-  const likeCounts = `/like/materials/${id}`;
 
   const {
     data: followers,
@@ -40,12 +38,6 @@ const UserInfoCard = (user: User) => {
     isLoading: followingFetchIsLoading,
     error: followingFetchError,
   } = useSWR(followingKey, fetcher);
-
-  const {
-    data: likeCountData,
-    isLoading: likeCountFetchIsLoading,
-    error: likeCountFetchError,
-  } = useSWR(likeCounts, fetcher);
 
   const isFollowed =
     !followerFetchIsLoading &&
@@ -125,22 +117,6 @@ const UserInfoCard = (user: User) => {
               '获取失败请刷新重试'
             ) : (
               following.data.length
-            )}
-          </div>
-        </div>
-        <div className={styles.situationItem}>
-          <div className={styles.situationItemTitle}>物料</div>
-          <div className={styles.situationItemValue}>{materials.length}</div>
-        </div>
-        <div className={styles.situationItem}>
-          <div className={styles.situationItemTitle}>获赞</div>
-          <div className={styles.situationItemValue}>
-            {likeCountFetchIsLoading ? (
-              <Spin />
-            ) : likeCountFetchError ? (
-              '获取失败请刷新重试'
-            ) : (
-              likeCountData.data.length
             )}
           </div>
         </div>

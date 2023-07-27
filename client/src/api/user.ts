@@ -4,7 +4,6 @@ import type {
   UpdateUserDto,
 } from '../types/user';
 import http from '../utils/http';
-import { NewGroupDto } from '../types/group';
 
 // TODO response type
 
@@ -39,10 +38,6 @@ export const findAllUser = () => http('/user/findall');
 
 export function getInfo() {
   return http('/user/userinfo');
-}
-
-export function getMyMaterial() {
-  return http('/material/myself');
 }
 
 export function updateUserInfo(data: UpdateUserDto) {

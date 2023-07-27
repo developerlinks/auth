@@ -63,6 +63,9 @@ export default function NavBar() {
         position='bottomLeft'
         render={
           <Dropdown.Menu>
+            <Dropdown.Item onClick={() => push(`/user/${user?.id}`)}>
+              个人主页
+            </Dropdown.Item>
             <Dropdown.Item onClick={() => push('/user/setting')}>
               个人设置
             </Dropdown.Item>
